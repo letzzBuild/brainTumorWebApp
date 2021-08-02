@@ -15,11 +15,12 @@ import axios from 'axios';
 
 export default function Services(){
 
-    var random = Math.random();
-    
-    const [outputimage, setoutputimage] = useState("")
+    var random =  Math.random();
+
+    const [label, setlabel] = useState("")
     const [image, setimage] = useState(null)
     const [showOutput, setshowOutput] = useState(false)
+    const [outputImage, setoutputImage] = useState("")
 
     const changeHandler = (event)=>{
      console.log(event.target.files)
@@ -35,9 +36,9 @@ export default function Services(){
          "mri", image
      )
      axios.post("http://127.0.0.1:8000/app/detect/",formdata).then((res)=>{
-          setoutputimage("")
-          console.log(res)
-          setoutputimage(res.data.result['output_image'])
+          setlabel(res.data.result.output)
+          setoutputImage("http://127.0.0.1:8000"+res.data.result.image)
+          console.log(res.data.result.output)
           setshowOutput(true)
 
      }).catch((err)=>{
@@ -70,9 +71,14 @@ export default function Services(){
        <br></br> <br></br>
         {showOutput ? <div>
             <center>
-                 <h6>{console.log(outputimage)}</h6>
-                <h1>Segmented Output Image</h1>
-                <img width={700} height={400} src={outputimage+`?${random}`} alt="not found"/>
+                <h1>Brain Tumor Stage</h1>
+                <div className="output-container">
+                 <img src={outputImage+`?${random}`} width="400" height="300" alt="not found"/>
+                <div className="outputLabel">
+                <h1 >{label}</h1>
+                </div>
+                </div>
+            
             </center>
             </div>  : ""  
             

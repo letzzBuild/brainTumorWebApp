@@ -11,9 +11,9 @@ export default function AboutPage(){
             <div className="aboutus-text" >
                 <div className="inner-about-us">
                 <h1 style={{color:'grey'}}>About Us</h1><br></br>
-                <h3 style={{fontFamily:'dancing-script'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga ad
-                ipisci omnis asperiores. Animi odio, atque accu
-                samus et harum cumque?</h3>
+                <h3 style={{fontFamily:'dancing-script'}}>Shruti Rokade</h3>
+                <h3 style={{fontFamily:'dancing-script'}}>Priyanka Dsouza</h3>
+                <h3 style={{fontFamily:'dancing-script'}}>Soujanya Haravi</h3>
                 </div>
                 </div>
             
