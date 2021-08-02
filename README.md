@@ -1,5 +1,5 @@
 Step 1 : open cmd and type
-git clone https://github.com/letzzBuild/brainTumorStageIdentification.git
+git clone https://github.com/letzzBuild/brainTumorWebApp.git
 Step 2 : cd brainTumorStageIdentification
 Step 3 : npm install
 Step 4 : npm start
